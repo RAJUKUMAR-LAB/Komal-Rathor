@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://komalrathor.in/</loc>
     <lastmod>2026-09-18</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://komalrathor.in/profile.jpg</image:loc>
+      <image:title>Komal Rathor (Komal Rathore) - Web Developer &amp; Frontend Engineer Portfolio</image:title>
+      <image:caption>Official portrait of Komal Rathor (Komal Rathore) at komalrathor.in</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://komalrathor.in/komal-logo.jpg</image:loc>
+      <image:title>Komal Rathor (Komal Rathore) Logo</image:title>
+      <image:caption>Official avatar and brand logo of Komal Rathor (Komal Rathore)</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://komalrathor.in/Komal_Rathor_Resume.pdf</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://komalrathor.in/Komal_Rathore_Resume.pdf</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

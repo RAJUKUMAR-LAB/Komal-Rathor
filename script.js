@@ -193,8 +193,12 @@ function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
+  let isSubmitting = false;
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    if (isSubmitting) return;
 
     const name = document.getElementById('sender-name').value.trim();
     const email = document.getElementById('sender-email').value.trim();
@@ -206,14 +210,35 @@ function initContactForm() {
       return;
     }
 
-    const mailtoUrl = `mailto:komalrathorebgs@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-      `Hello Komal,\n\nMy name is ${name} (${email}).\n\nMessage:\n${message}\n\nSent from your portfolio website.`
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showToast('Please enter a valid email address ⚠️');
+      return;
+    }
+
+    // Sanitize message strings
+    const cleanName = name.replace(/[<>]/g, '');
+    const cleanSubject = subject.replace(/[<>]/g, '');
+    const cleanMessage = message.replace(/[<>]/g, '');
+
+    const mailtoUrl = `mailto:komalrathorebgs@gmail.com?subject=${encodeURIComponent(cleanSubject)}&body=${encodeURIComponent(
+      `Hello Komal,\n\nMy name is ${cleanName} (${email}).\n\nMessage:\n${cleanMessage}\n\nSent from your portfolio website (komalrathor.in).`
     )}`;
+
+    isSubmitting = true;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
 
     showToast('Opening your email client... 🚀');
     window.location.href = mailtoUrl;
 
     form.reset();
+
+    setTimeout(() => {
+      isSubmitting = false;
+      if (submitBtn) submitBtn.disabled = false;
+    }, 3000);
   });
 }
 

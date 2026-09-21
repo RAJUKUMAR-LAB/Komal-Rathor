@@ -28,7 +28,7 @@ function initThemeToggle() {
     themeToggleBtn.addEventListener('click', () => {
       const currentTheme = htmlRoot.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
+
       htmlRoot.setAttribute('data-theme', newTheme);
       localStorage.setItem('kr_theme', newTheme);
       showToast(`Switched to ${newTheme.toUpperCase()} mode 🌓`);
@@ -44,11 +44,11 @@ function initDynamicRoleText() {
   if (!roleElement) return;
 
   const roles = [
-    'Aspiring Web Developer',
-    'Frontend & React Developer',
-    'Python & C Programmer',
-    'B.Tech Scholar (2024–27)',
-    'Next.js Enthusiast'
+    'an Aspiring Web Developer',
+    'a Frontend & React Developer',
+    'a Python & C Programmer',
+    'a B.Tech Scholar (2024–27)',
+    'a Next.js Enthusiast'
   ];
 
   let roleIndex = 0;
@@ -172,7 +172,7 @@ function initCopyToClipboard() {
       try {
         await navigator.clipboard.writeText(textToCopy);
         showToast(`Copied "${textToCopy}" to clipboard! 📋`);
-        
+
         // Quick visual feedback on the button
         const originalHtml = btn.innerHTML;
         btn.innerHTML = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>`;
